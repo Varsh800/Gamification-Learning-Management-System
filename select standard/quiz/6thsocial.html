@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #3b1212;
+            margin: 0;
+            padding: 0;
+          }
+      
+          h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #ffd700;
+          }
+      
+          #quizForm {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          }
+      
+          h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+          }
+      
+          label {
+            display: block;
+            margin-bottom: 8px;
+          }
+      
+          input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #3b1212;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            justify-content: center;
+          }
+      
+          input[type="submit"]:hover {
+            background-color: #ffd700;
+          }
+      
+          #result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+            color: white;
+          }
+      
+          .gold-badge {
+            color: #ffd700;
+            
+          }
+      
+          .silver-badge {
+            color: #c0c0c0;
+          }
+      
+          .bronze-badge {
+            color: #cd7f32;
+          }
+    </style>
+  <meta charset="UTF-8">
+  <title>Quiz</title>
+  <link rel="icon" href="C:\Users\Varshith\Downloads\Screenshot_2023-12-17_015413-removebg-preview.png">
+  <style>
+    
+  </style>
+</head>
+<body>
+  <h1>Social Quiz</h1>
+  <form id="quizForm">
+    <h2>Question 1:When is the beggining of Agriculture ?</h2>
+    <label><input type="radio" name="q1" value="a"> 8200 years ago</label><br>
+    <label><input type="radio" name="q1" value="b"> 6800</label><br>
+    <label><input type="radio" name="q1" value="c"> 7000</label><br>
+
+    <h2>Question 2: Which planet is nearer to sun?</h2>
+    <label><input type="radio" name="q2" value="a"> Mercury</label><br>
+    <label><input type="radio" name="q2" value="b"> Mars</label><br>
+    <label><input type="radio" name="q2" value="c"> Venus</label><br>
+
+    <h2>Question 3: How many days in a leap year?</h2>
+    <label><input type="radio" name="q3" value="a"> 364</label><br>
+    <label><input type="radio" name="q3" value="b"> 367</label><br>
+    <label><input type="radio" name="q3" value="c"> 366</label><br>
+
+    <h2>Question 4:Which is the capital of HarshVardhana?</h2>
+    <label><input type="radio" name="q4" value="a">Patna</label><br>
+    <label><input type="radio" name="q4" value="b"> Patliputra</label><br>
+    <label><input type="radio" name="q4" value="c"> kannoj</label><br>
+
+    <h2>Question 5: On which place bhuddha attained anlightment?</h2>
+    <label><input type="radio" name="q5" value="a"> agra</label><br>
+    <label><input type="radio" name="q5" value="b">Banaras</label><br>
+    <label><input type="radio" name="q5" value="c"> Bodh Gaya</label><br>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <div id="result"></div>
+  
+
+</body>
+
+<script>
+    
+    document.getElementById('quizForm').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+      
+        
+        const q1Answer = document.querySelector('input[name="q1"]:checked');
+        const q2Answer = document.querySelector('input[name="q2"]:checked');
+        const q3Answer = document.querySelector('input[name="q3"]:checked');
+        const q4Answer = document.querySelector('input[name="q4"]:checked');
+        const q5Answer = document.querySelector('input[name="q5"]:checked');
+      
+        
+        let score = 0;
+        if (q1Answer && q1Answer.value === 'b') {
+          score += 1;
+        }
+        if (q2Answer && q2Answer.value === 'b') {
+          score += 1;
+        }
+        if (q3Answer && q3Answer.value === 'c') {
+            score += 1;
+          }
+          if (q4Answer && q4Answer.value === 'b') {
+            score += 1;
+          }
+          if (q5Answer && q5Answer.value === 'c') {
+            score += 1;
+          }
+      
+        
+        const resultContainer = document.getElementById('result');
+        resultContainer.innerHTML = `You scored ${score} out of 5.`;
+      
+        let badge = '';
+        if (score === 5) {
+          badge = 'Gold Badge🥇: Excellent!';
+        } else if (score === 3) {
+          badge = 'Silver Badge🥈: Good job!';
+        } else {
+          badge = 'Bronze Badge🥉: Keep practicing!';
+        }
+      
+        
+      
+  </script>
+</html>
